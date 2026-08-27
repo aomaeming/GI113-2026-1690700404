@@ -114,6 +114,7 @@ namespace Lab02
             Console.WriteLine($"Strength: {laStrength}");
             Console.WriteLine($"Farmer?: {isFarmerR}");
             Console.WriteLine();
+            Console.WriteLine("----------------------------------------------");
         }
     }
 }
