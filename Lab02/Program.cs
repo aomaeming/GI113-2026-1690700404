@@ -49,14 +49,14 @@ namespace Lab02
             Console.WriteLine();
             Console.WriteLine("AICHAN*");
             Console.WriteLine();
-            string aiVillager = "Aichan";                                            // ชื่อ
-            char aiTier = 'S';                                                       // ความหายาก
+            string aiVillager = "Doctor";                                            // อาชีพ
+            char aiTier = 'S';                                                       // ความหายากของตัวละคร
             int aiMaxStamina = 80;                                                   // พลังงานที่ตัวละครใช้ได้ทั้งหมดต่อวัน
             int aiCurrentStamina = 50;
-            int aiSpeed = 120;                                                       // ความเร็วของตัวละคร
+            int aiSpeed = 180;                                                       // ความเร็วของตัวละคร
             float aiStrength = 38.6f;                                                // ความแข็งแกร่งของตัวละคร
             double aiHavestMultiplier = 0.45;                                        // อัตราการเพิ่มผลผลิตจากการเก็บเกี่ยวของตัวละคร
-            bool isFarmer = false;                                                   // ตัวละครนี้เป็นชาวนาไหม : ไอจังเป็นหมอ
+            bool isFarmer = false;                                                   // ตัวละครนี้เป็นชาวนาไหม
             Console.WriteLine($"Tier: {aiTier}");
             Console.WriteLine($"Stamina: {aiCurrentStamina} / {aiMaxStamina}");
             Console.WriteLine($"Speed: {aiSpeed}");
@@ -66,7 +66,7 @@ namespace Lab02
 
             Console.WriteLine("LILAC*");
             Console.WriteLine();
-            string liVillager = "Lilac";
+            string liVillager = "Farmer";
             char liTier = 'A';
             int liMaxStamina = 130;
             int liCurrentStamina = 100;
@@ -83,7 +83,7 @@ namespace Lab02
 
             Console.WriteLine("AMETIS*");
             Console.WriteLine();
-            string aVillager = "Ametis";
+            string aVillager = "Farmer";
             char aTier = 'S';
             int aMaxStamina = 210;
             int aCurrentStamina = 180;
@@ -100,19 +100,19 @@ namespace Lab02
 
             Console.WriteLine("LARA*");
             Console.WriteLine();
-            string laVillager = "Lara";
+            string laVillager = "fisher";
             char laTier = 'B';
             int laMaxStamina = 100;
             int laCurrentStamina = 98;
             int laSpeed = 75;
             float laStrength = 42.7f;
             double laHavestMultiplier = 1.46;
-            bool isFarmerR = false;                                                        // ลาร่าเป็นชาวประมง
+            bool isFarmerR = false;
             Console.WriteLine($"Tier: {laTier}");
+            Console.WriteLine($"Occupation: {laVillager}");
             Console.WriteLine($"Stamina: {laCurrentStamina} / {laMaxStamina}");
             Console.WriteLine($"Speed: {laSpeed}");
             Console.WriteLine($"Strength: {laStrength}");
-            Console.WriteLine($"Farmer?: {isFarmerR}");
             Console.WriteLine();
             Console.WriteLine("----------------------------------------------");
         }
