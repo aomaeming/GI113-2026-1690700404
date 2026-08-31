@@ -13,7 +13,7 @@ namespace Lab03
     {
         static void Main(string[] args)
         {
-            const int MaxLevel = 10;
+            const int maxLevel = 10;
 
             var bossName = "Kirin";   // ต้องประกาศด้วย var ห้ามเขียน string ตรงๆ
             var rank = 'S';            // ต้องประกาศด้วย var ห้ามเขียน char ตรงๆ
@@ -26,8 +26,7 @@ namespace Lab03
 
             // output แสดงค่าตัวแปร
             Console.WriteLine("===== KIRIN SAVE CONVERTER =====");
-            Console.WriteLine($"Name: {bossName}\nRank: {rank}\nLevel: {level}\nHP: {currentHp} / {maxHp} +
-                $"\nAttack Power: {attackPower}\nCritical Multiplier: {critMultiplier}\nIs Boss: {isBoss}");
+            Console.WriteLine($"Name: {bossName}\nRank: {rank}\nLevel: {level} / {maxLevel}\nHP: {currentHp} / {maxHp}\nAttack Power: {attackPower}\nCritical Multiplier: {critMultiplier}\nIs Boss: {isBoss}");
 
             // ทำ implicit int -> double
             Console.WriteLine("\n----- Implicit Conversion: HP as double -----");
@@ -48,7 +47,7 @@ namespace Lab03
             Console.WriteLine("\n----- Cast vs Convert: Crit Multiplier -----");
             int critCast = (int)critMultiplier;
             int critConvert = Convert.ToInt32(critMultiplier);
-            Console.WriteLine($"Crit Multiplier (cast): {critCast}\nCrit Multiplier (convert): {critConvert}");
+            Console.WriteLine($"Crit Multiplier (int cast): {critCast}\nCrit Multiplier (convert rounded): {critConvert}");
 
         }
     }
