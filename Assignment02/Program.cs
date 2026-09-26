@@ -1,0 +1,19 @@
+﻿/*
+ * Student ID : 1690700404
+ * Name       : Sukruethai Noppakao
+ * Section    : 129A
+ * No.        : 22
+ * Course     : GI113 Computer Programming (GI)
+ */
+
+
+namespace Assignment02
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Hello, World!");
+        }
+    }
+}
