@@ -39,53 +39,38 @@ namespace Assignment02
             Console.WriteLine("Choose what you want to do today!(s&B): ");
             bool userInput = char.TryParse(Console.ReadLine(), out char ToDo);
 
-            if (!userInput || (ToDo != 'S' && ToDo != 's' && ToDo != 'B' && ToDo != 'b'))
+            Console.WriteLine();
+            Console.WriteLine($"Enter the amount of {ore} or {ingot}!: ");
+            bool amountInput = double.TryParse(Console.ReadLine(), out double amount);
+
+            if (!amountInput || (amount <= 0))
             {
                 Console.WriteLine();
-                Console.WriteLine($"Invalid input, Please try again Choose your menu between 'S' or 'B'");
+                Console.WriteLine($"ERROR (AMOUNT): Invalid input, Please try again with some {ore} and more than zero!");
             }
-            else if (ToDo == 'S' || ToDo == 's')
+            else if (!amountInput || (amount > maxBatch))
             {
                 Console.WriteLine();
-                Console.WriteLine($"How much {ore} you want to smelt?: ");
-                bool oreInput = double.TryParse(Console.ReadLine(), out double oreAmount);
-                if ( oreAmount > 0 && oreAmount <= maxBatch )
+                Console.WriteLine($"ERROR (AMOUNT): Too much {ore}! Please try again with an amount that less than or equal to {maxBatch}!");
+            }
+            else if (amountInput && amount > 0 && amount <= maxBatch)
+            {
+                if (ToDo == 'S' || ToDo == 's')
                 {
-                    double ingotAmount = oreAmount * smelting;
+                    double ingotAmount = amount * smelting;
                     Console.WriteLine();
-                    Console.WriteLine($"You'll get {ingotAmount} {ingot}s from {oreAmount} {ore}s ");
+                    Console.WriteLine($"You'll get {ingotAmount} {ingot}s from {amount} {ore}s ");
                 }
-                else if (oreAmount > maxBatch)
+                else if (ToDo == 'B' || ToDo == 'b')
                 {
+                    double oreAmount = amount / salvage;
                     Console.WriteLine();
-                    Console.WriteLine($"Too much {ore}! Please try again ");
+                    Console.WriteLine($"You'll get {oreAmount} {ore}s from {amount} {ingot}s ");
                 }
                 else
                 {
                     Console.WriteLine();
-                    Console.WriteLine($"Invalid input, Please try again with some {ore}!");
-                }
-            }
-            else if (ToDo == 'B' || ToDo == 'b')
-            {
-                Console.WriteLine();
-                Console.WriteLine($"How much {ingot} you want to breakdown?: ");
-                bool ingotInput = double.TryParse(Console.ReadLine(), out double ingotAmount);
-                if (ingotAmount > 0 && ingotAmount <= maxBatch )
-                {
-                    double oreAmount = ingotAmount / salvage;
-                    Console.WriteLine();
-                    Console.WriteLine($"You'll get {oreAmount} {ore}s from {ingotAmount} {ingot}s ");
-                }
-                else if (ingotAmount > maxBatch)
-                {
-                    Console.WriteLine();
-                    Console.WriteLine($"Too much {ingot}! Please try again ");
-                }
-                else
-                {
-                    Console.WriteLine();
-                    Console.WriteLine($"Invalid input, Please try again with some {ingot}!");
+                    Console.WriteLine($"ERROR (MENU): Invalid input, Please try again Choose your menu between 'S' or 'B'");
                 }
             }
         }
